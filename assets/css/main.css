@@ -1654,3 +1654,18 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+
+/* all custom css */
+
+
+.hero-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: red;
+}
+ 
+ 
