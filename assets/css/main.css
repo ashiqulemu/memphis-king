@@ -1672,6 +1672,14 @@ section,
 svg{
   width: 80%;
 }
+
+@media (max-width:768px) {
+  svg{
+  width: 100%;
+}
+}
+
+
 .menuIcon{
 position: absolute;
     top: 15px;
