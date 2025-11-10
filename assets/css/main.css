@@ -1667,5 +1667,11 @@ section,
   height: 100vh;
   background: red;
 }
+
+svg{
+  width: 80%;
+}
+
+ 
  
  
