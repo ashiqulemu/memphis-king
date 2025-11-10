@@ -1679,6 +1679,10 @@ svg{
 }
 }
 
+.text-justify{
+  text-align: justify;
+}
+
 
 .menuIcon{
 position: absolute;
