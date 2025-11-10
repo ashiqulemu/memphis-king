@@ -1665,11 +1665,43 @@ section,
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: red;
+  background: rgb(0, 0, 0);
+  position: relative;
 }
 
 svg{
   width: 80%;
+}
+.menuIcon{
+position: absolute;
+    top: 15px;
+    right: 33px;
+    color: #ffffff;
+    font-size: 4rem;
+}
+.menuIcon:hover{ 
+  color: #ff0000; 
+}
+
+.btn-cross{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.side-menu li {
+list-style: none;
+}
+.side-menu li a{
+ text-decoration: none;
+  color: #fff;
+  font-size: 3rem;
+
+}
+.side-menu li a:hover{ 
+  color: #ff0000; 
 }
 
   
