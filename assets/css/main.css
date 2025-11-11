@@ -1748,13 +1748,14 @@
 
  .inline-form-style .items {
    flex: 1;
-   padding: 10px;
-   text-transform: capitalize;
+   padding: 10px; 
+   text-transform: uppercase;
  }
 
  .inline-form-style {
    background: #f0efef;
    margin-bottom: 2px;
+   
  }
 @media(max-width:768px){
   .inline-form-style {
@@ -1764,6 +1765,7 @@
   .inline-form-style .items{
     width: 100%;
     text-align: center;
+    
   }
  }
  .theme-font {
@@ -1788,9 +1790,11 @@
   border-radius: 0;
       font-size: 14px;
   color: #212529bf;
+  text-transform: uppercase;
  }
  .form-control::placeholder{
   color: #212529bf !important;
+  text-transform: uppercase;
  }
 
  .secondary-font{
