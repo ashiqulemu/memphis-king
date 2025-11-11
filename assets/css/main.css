@@ -1780,6 +1780,7 @@
  .form-control{
   height: 43px;
   border-radius: 0;
+      font-size: 14px;
   color: #212529bf;
  }
  .form-control::placeholder{
