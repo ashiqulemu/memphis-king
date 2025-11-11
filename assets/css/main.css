@@ -1716,7 +1716,24 @@ list-style: none;
   color: #ff0000; 
 }
 
-  
+
+/* order form */
+
+.inline-form-style{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.inline-form-style .items{
+ flex:1;
+ padding: 10px;
+}
+  .inline-form-style:nth-child(odd){
+ background: #f0efef;
+    
+}
 
  
  
