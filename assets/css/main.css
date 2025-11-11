@@ -1730,9 +1730,9 @@ list-style: none;
  flex:1;
  padding: 10px;
 }
-  .inline-form-style:nth-child(odd){
+  .inline-form-style {
  background: #f0efef;
-    
+    margin-bottom: 2px;
 }
 
  
