@@ -1729,6 +1729,7 @@ list-style: none;
 .inline-form-style .items{
  flex:1;
  padding: 10px;
+ text-transform: capitalize;
 }
   .inline-form-style {
  background: #f0efef;
