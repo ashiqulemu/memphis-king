@@ -1,7 +1,13 @@
  /* Fonts */
+
  @font-face {
-   font-family: 'PointedlyMad.ttf';
+   font-family: "PointedlyMad";
    src: url('../fonts/PointedlyMad.ttf');
+ }
+
+ @font-face {
+   font-family: 'Sunlight Dreams';
+   src: url('../fonts/Sunlight Dreams.otf');
  }
 
 
@@ -797,7 +803,7 @@
 
  .section-title p .description-title {
    color: var(--accent-color);
-   font-family: 'PointedlyMad.ttf';
+   font-family: 'PointedlyMad';
  }
 
  /*--------------------------------------------------------------
@@ -1761,7 +1767,7 @@
   }
  }
  .theme-font {
-   font-family: 'PointedlyMad.ttf';
+   font-family: 'PointedlyMad';
    font-size: 6rem;
    -webkit-text-stroke: 1px #000000;
     color: #fff;
@@ -1785,4 +1791,8 @@
  }
  .form-control::placeholder{
   color: #212529bf !important;
+ }
+
+ .secondary-font{
+     font-family: 'Sunlight Dreams'!important;
  }
