@@ -803,7 +803,7 @@
 
  .section-title p .description-title {
    color: var(--accent-color);
-   font-family: 'Sunlight Dreams'!important;
+   font-family: 'Sunlight Dreams' !important;
  }
 
  /*--------------------------------------------------------------
@@ -1744,39 +1744,42 @@
    gap: 15px;
  }
 
- 
+
 
  .inline-form-style .items {
    flex: 1;
-   padding: 10px; 
+   padding: 10px;
    text-transform: uppercase;
  }
 
  .inline-form-style {
    background: #f0efef;
    margin-bottom: 2px;
-   
+
  }
-@media(max-width:768px){
-  .inline-form-style {
-    flex-direction: column;
-    gap: 1px;
-  }
-  .inline-form-style .items{
-    width: 100%;
-    text-align: center;
-    
-  }
+
+ @media(max-width:768px) {
+   .inline-form-style {
+     flex-direction: column;
+     gap: 1px;
+   }
+
+   .inline-form-style .items {
+     width: 100%;
+     text-align: center;
+
+   }
  }
+
  .theme-font {
    font-family: 'PointedlyMad';
    font-size: 6rem;
    -webkit-text-stroke: 1px #000000;
-    color: #fff;
-    filter: drop-shadow(0px 1px -3px -3px black);
-    text-shadow: 5px 7px 0px #777, -9px 4px 0px #777, 1px -5px 0px #777, -5px -8px 0px #777, 10px 0px 0px #777, -3px 0px 0px #777, 0px 3px 0px #777, 0px -7px 0px #777;
-    line-height: 1;
-    letter-spacing: 0px;
+   color: #fff;
+   filter: drop-shadow(0px 1px -3px -3px black);
+   text-shadow: 5px 7px 0px #777, -9px 4px 0px #777, 1px -5px 0px #777, -5px -8px 0px #777, 10px 0px 0px #777, -3px 0px 0px #777, 0px 3px 0px #777, 0px -7px 0px #777;
+   line-height: 1;
+   letter-spacing: 0px;
  }
 
  @media(max-width:768px) {
@@ -1785,18 +1788,82 @@
    }
  }
 
- .form-control{
-  height: 43px;
-  border-radius: 0;
-      font-size: 14px;
-  color: #212529bf;
-  text-transform: uppercase;
- }
- .form-control::placeholder{
-  color: #212529bf !important;
-  text-transform: uppercase;
+ .form-control {
+   height: 43px;
+   border-radius: 0;
+   font-size: 14px;
+   color: #212529bf;
+   text-transform: uppercase;
  }
 
- .secondary-font{
-     font-family: 'Sunlight Dreams'!important;
+ .form-control::placeholder {
+   color: #212529bf !important;
+   text-transform: uppercase;
+ }
+
+ .secondary-font {
+   font-family: 'Sunlight Dreams' !important;
+ }
+
+ .food-menu-item {
+   display: flex;
+   padding: 15px;
+   background: #ffffffd9;
+   border-radius: 10px;
+   gap: 15px;
+   position: relative;
+   z-index: 1;
+   transition: all 0.2s ease-in-out;
+ }
+
+ .food-menu-item:hover {
+ transform: scale(1.02); 
+ }
+ 
+
+ .food-menu-item .photo {
+   flex-basis: 80px;
+   display: flex;
+   align-items: center;
+ }
+
+ .food-menu-item .menu-details {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   text-align: left;
+   text-align-last: start;
+ }
+ .food-menu-item .menu-details h4 {
+  font-family: 'Sunlight Dreams' !important;
+ }
+ .food-menu-item .menu-details .ingredients {
+  color: #000000;
+    font-size: 18px;
+    margin-bottom: 5px;
+ }
+ .food-menu-item .menu-details .price {
+    font-family: 'Sunlight Dreams' !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+ }
+
+ 
+
+ .starter {
+   background-image: url('../img/bg-photo.jpg');
+   background-position: center center;
+   position: relative;
+ }
+
+ .starter::after{
+content: '';
+ position: absolute;
+background-color: #2d2a2aa1;
+left: 0 ;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: 0;
  }
