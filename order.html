@@ -3146,7 +3146,7 @@
 						</div>
 						<div class="col-md-4  ">
 							<p class="text-muted mb-1 text-uppercase">
-								Catering Date 
+								Catering Date
 							</p>
 							<input type="date" class="form-control" name="email" placeholder=" Email" required="">
 						</div>
@@ -3160,10 +3160,12 @@
 							</select>
 						</div>
 						<div class="col-md-4 d-flex align-items-center">
-							 
+
 							<div class="d-flex gap-3 text-uppercase">
-								<label for="delivery"> <input type="checkbox" id="delivery"> Delivery</label>
-								<label for="pick-up"> <input type="checkbox" id="pick-up"> Pick-Up</label>
+								<label class="d-flex gap-2 align-items-center" for="delivery"> <input type="checkbox"
+										id="delivery"> Delivery</label>
+								<label class="d-flex gap-2 align-items-center" for="pick-up"> <input type="checkbox"
+										id="pick-up"> Pick-Up</label>
 							</div>
 						</div>
 
@@ -3305,17 +3307,10 @@
 										<option value=""> 2</option>
 									</select>
 								</div>
-
 								<div class="items">Total : <span class='text-success'> $100</span> </div>
 							</div>
-
-
 						</div>
 						<div class="col-md-12 text-center">
-							<div class="loading">Loading</div>
-							<div class="error-message"></div>
-							<div class="sent-message">Your message has been sent. Thank you!</div>
-
 							<button type="submit" class="text-uppercase">Submit Order</button>
 						</div>
 
@@ -3325,7 +3320,299 @@
 			</div>
 
 		</section>
-		<!-- /Contact Section -->
+
+
+
+
+		<section class="payment_info">
+			<a name="allinfo"></a>
+			<div class="container" id="allinfo_section">
+				<!-- <script>
+					$(function () {
+						$('.payment_method').hide();
+						$('#cc_form').show();
+						$('#payment_method').change(function () {
+							var thisVal = $(this).val();
+
+							// new ajax call here 
+							// set session - ADMIN_BOOKING_NON_CC = 1 
+							// if payment method other than cc 
+							// else set session - ADMIN_BOOKING_NON_CC = 0
+							// reload the same page
+							// set display blocks according to payment method
+							$('#loader1,#loader2,#please_wait_pm').show();
+							$.ajax({
+								data: "mode=admin_booking_non_cc&payment_method=" + thisVal,
+								url: siteDomain + "actions.php",
+								type: ajaxMethod,
+								dataType: "html",
+								cache: false,
+								success: function (html) {
+									$('.payment_method').hide();
+									$('#' + thisVal + '_form').show();
+									$('.pmt_frm_items').removeAttr('required');
+									$('#' + thisVal + '_form .pmt_frm_items').attr('required', 'required');
+									var arrHtml = html.split('=X=');
+									if (arrHtml[0] == 'OK') {
+										if ($('#is_seatchart').val() == '0') {
+											setCalculatedValues(false);
+										} else {
+											setCalculatedValuesSC(false);
+										}
+										//alert(arrHtml[1]);
+										setTimeout(function () {
+											$('#loader1,#loader2,#please_wait_pm').hide();
+										}, 500)
+									} else {
+										alertModal("There is some error. Please reload and try again.");
+										return false;
+									}
+								}
+							});
+						})
+
+						$("#look_for").keyup(function () {
+							var thisVal = $(this).val();
+							if (thisVal.length < 2) {
+								$('#looked_for').html('');
+								$('#looked_for').hide();
+								return false;
+							}
+							$('#look_for_loader').show();
+							$.ajax({
+								url: siteDomain + "siteowner/actions.php",
+								type: "GET",
+								data: 'mode=finduser&term=' + thisVal,
+								dataType: "html",
+								cache: false,
+								success: function (html) {
+									// alert(html);
+									$('#look_for_loader').hide();
+									$('#looked_for').html(html);
+									$('#looked_for').show();
+								}
+							});
+						});
+
+						// $('.items_looked_for').live('click',function(){
+						$(document).on("click", ".items_looked_for", function () {
+							var rel = $(this).attr('rel');
+							// alert(rel);
+							var arrRel = rel.split(':-:');
+
+							$('#dpd_country').val(arrRel[6]).trigger('change');
+							$('#looked_for').prepend(' &nbsp; <span style = "color:red;">Please Wait...!</span> <br />');
+							setTimeout(function () {
+								$('#fname').val(arrRel[0]);
+								$('#lname').val(arrRel[1]);
+								$('#address').val(arrRel[2]);
+								$('#city').val(arrRel[3]);
+								$('#zip').val(arrRel[5]);
+								$('#phone').val(arrRel[7]);
+								$('#email').val(arrRel[8]);
+								$('#looked_for').html('');
+								$('#looked_for').hide();
+								$("#look_for").val('');
+								$('#dpd_state').val(arrRel[4]);
+
+							}, 3000);
+
+						});
+					});
+
+				</script>  -->
+				<div class="row position-relative">
+					<div class="col-lg-6 my-2">
+						<div class="info-box border border-2 border-dark p-5 rounded-4">
+							<h2 class="secondary-font mb-4"> Your Info</h2>
+
+
+
+							<div class="mb-3">
+								<label for="" class="small text-muted text-uppercase">First Name*</label>
+								<input type="text" data-stripe="firstname" name="fname" id="fname" value=""
+									class="form-control " placeholder="First Name" required="required">
+							</div>
+
+							<div class="mb-3">
+								<label for="" class="small text-muted text-uppercase">Last Name*</label>
+								<input type="text" data-stripe="lastname" name="lname" id="lname" value=""
+									class="form-control " placeholder="Last Name" required="required">
+							</div>
+
+							<div class="mb-3">
+								<label for="" class="small text-muted text-uppercase">Address*</label>
+								<input type="text" name="address" id="address" value="" class="form-control "
+									placeholder="Address" required="required">
+							</div>
+
+							<div class="mb-3">
+								<label for="" class="small text-muted text-uppercase">Country*</label>
+								<select class="form-control" name="country" id="dpd_country" required="required">
+									<option value="">country 1</option>
+									<option value="">country 2</option>
+									<option value="">country 3</option>
+								</select>
+							</div>
+
+							<div class="mb-3">
+								<label for="" class="small text-muted text-uppercase">Zip*</label>
+								<input type="number" name="zip" id="zip" value="" class="form-control "
+									placeholder="Zip must be the same as on your credit card" required="required">
+							</div>
+
+							<div class="mb-3">
+								<label for="" class="small text-muted text-uppercase">Phone*</label>
+								<input type="text" name="phone" id="phone" value="" class="form-control "
+									placeholder="Phone" required="required">
+							</div>
+
+							<div class="mb-3">
+								<label for="" class="small text-muted text-uppercase">Email*</label>
+								<input type="email" data-stripe="email" name="email" id="email" value=""
+									class="form-control " placeholder="Email" required="required">
+							</div>
+
+						</div>
+					</div>
+					<div class="col-lg-6 my-2 ">
+						<div class="info-box border position-relative h-100 border-2 border-dark p-5 rounded-4 ">
+							<h2 class="secondary-font mb-4"> Payment Info</h2>
+
+
+							<input type="hidden" name="payment_method" id="payment_method" value="cc">
+
+
+							<div id="payment_mode">
+
+								<div id="cash_form" class="payment_method" style="display: none;">
+									<div class="mb-3">
+										<label>Cash Notes:</label>
+										<textarea type="text" name="cash_notes" class="form-control pmt_frm_items "
+											placeholder=""></textarea>
+									</div>
+								</div>
+								<div id="check_form" class="payment_method" style="display: none;">
+									<div class="mb-3">
+										<label>Check Number:</label>
+										<input type="text" name="check_no" class="form-control pmt_frm_items "
+											placeholder="">
+									</div>
+
+									<div class="mb-3">
+										<label>Check Details:</label>
+										<textarea type="text" name="check_detail" class="form-control pmt_frm_items "
+											placeholder=""></textarea>
+									</div>
+								</div>
+								<div id="voucher_form" class="payment_method" style="display: none;">
+									<div class="mb-3">
+										<label>Voucher Number:</label>
+										<input type="text" name="voucher_no" class="form-control pmt_frm_items "
+											placeholder="">
+									</div>
+
+									<div class="mb-3">
+										<label>Voucher Details:</label>
+										<textarea type="text" name="voucher_detail" class="form-control pmt_frm_items "
+											placeholder=""></textarea>
+									</div>
+								</div>
+
+								<div id="cc_form" class="payment_method" style="">
+									<div class="mb-3">
+										<label for="" class="small text-muted text-uppercase">Cardholder Name:</label>
+										<input type="text" name="card_holder" required="required" placeholder=""
+											value="" class="pmt_frm_items form-control ">
+									</div>
+
+									<div class="mb-3">
+										<label for="" class="small text-muted text-uppercase">Credit Card
+											Number:*</label>
+										<input type="text" data-stripe="number" required="required" name="cc_no"
+											placeholder="" value="" class="pmt_frm_items form-control ">
+									</div>
+
+									<div class="mb-3">
+										<label for="" class="small text-muted text-uppercase">Expiration Date:</label>
+										<div class="d-flex gap-3 w-100 ">
+											<select name="mm" data-stripe="exp_month" required="required"
+												class="pmt_frm_items form-control">
+												<option value="01">01</option>
+												<option value="02">02</option>
+												<option value="03">03</option>
+												<option value="04">04</option>
+												<option value="05">05</option>
+												<option value="06">06</option>
+												<option value="07">07</option>
+												<option value="08">08</option>
+												<option value="09">09</option>
+												<option value="10">10</option>
+												<option value="11">11</option>
+												<option value="12">12</option>
+											</select>
+											<select name="dd" data-stripe="exp_year" required="required"
+												class="pmt_frm_items form-control" id="">
+												<option value="25">25</option>
+												<option value="26">26</option>
+												<option value="27">27</option>
+												<option value="28">28</option>
+												<option value="29">29</option>
+												<option value="30">30</option>
+												<option value="31">31</option>
+												<option value="32">32</option>
+												<option value="33">33</option>
+												<option value="34">34</option>
+												<option value="35">35</option>
+												<option value="36">36</option>
+												<option value="37">37</option>
+												<option value="38">38</option>
+												<option value="39">39</option>
+												<option value="40">40</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="mb-3">
+										<label for="" class="small text-muted text-uppercase">CVV Number:*</label>
+										<input type="text" data-stripe="cvc" name="ccv" required="required" value=""
+											class="pmt_frm_items form-control "
+											placeholder="CVV is a 3 digit code on the back of the card">
+									</div>
+
+									<div class="mb-3">
+										<label for="future_events d-flex gap-2 align-items-center ">
+											<input type="checkbox" checked id="future_events" name="promotion_opt_in"
+												value="1" required="required"><small class="text-uppercase" style="position: relative;    top: -3px;    left: 3px;">
+												Email me future events and promotions
+											</small>
+										</label>
+									</div>
+
+								</div>
+							</div>
+							<div class="form-bottom-box ">
+								<div class="rounded-3 border border-2 border-dark p-4 text-end">
+									Sub-Total: $<span id="seats_sub_total_bottom">237.00</span> <br>
+									Taxes/Fees: $<span id="seats_taxes_fees_bottom">15.00</span> <br>
+									Credit Card Processing Fee: $<span id="cc_fees_bottom">7.56</span> <br>
+									<strong class="text-black secondary-font">
+										GRAND TOTAL: $
+										<span id="seats_grand_total_bottom">259.56</span>
+									</strong>
+								</div>
+								<button type="button" name="submitbtn"
+									class="btn-theme py-3  w-100 border-0 mt-3 h3 secondary-font d-block"
+									id="continue_pay">
+									Pay Now
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 
 	</main>
 
@@ -3338,7 +3625,7 @@
 					<div class="address">
 						<h4>Address</h4>
 						<p>1902 Van Vranken Ave,</p>
-						<p>Schenectady, NY 12308</p> 
+						<p>Schenectady, NY 12308</p>
 					</div>
 
 				</div>
@@ -3359,18 +3646,20 @@
 					<div>
 						<h4>Opening Hours</h4>
 						<p>
-									 Tuesday - Sunday :<strong>  11:00am - 9:00pm</strong> <br> 
-									 Monday: <strong>Closed </strong>  <br>									 
-								</p>
+							Tuesday - Sunday :<strong> 11:00am - 9:00pm</strong> <br>
+							Monday: <strong>Closed </strong> <br>
+						</p>
 					</div>
 				</div>
 
 				<div class="col-lg-3 col-md-6">
 					<h4>Follow Us</h4>
-					<div class="social-links d-flex"> 
-						<a href="https://www.facebook.com/TheMemphisKingbbq" class="facebook"><i class="bi bi-facebook"></i></a>
-						<a href="https://www.instagram.com/the_memphis_king_bbq/" class="instagram"><i class="bi bi-instagram"></i></a>
-						 
+					<div class="social-links d-flex">
+						<a href="https://www.facebook.com/TheMemphisKingbbq" class="facebook"><i
+								class="bi bi-facebook"></i></a>
+						<a href="https://www.instagram.com/the_memphis_king_bbq/" class="instagram"><i
+								class="bi bi-instagram"></i></a>
+
 					</div>
 				</div>
 
@@ -3379,7 +3668,9 @@
 
 		<div class="container copyright text-center mt-4">
 			<p>© <span>Copyright</span> <strong class="px-1 sitename">Memphis King</strong>
-				 <span>All Rights Reserved <?php echo date("Y"); ?> </span> 
+				<span>All Rights Reserved
+					<?php echo date("Y"); ?>
+				</span>
 			</p>
 			<div class="credits">
 				<!-- All the links in the footer should remain intact. -->

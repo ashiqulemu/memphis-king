@@ -569,7 +569,7 @@
    color: var(--default-color);
    background-color: var(--background-color);
    font-size: 14px;
-   padding: 40px 0 15px ;
+   padding: 40px 0 15px;
    position: relative;
  }
 
@@ -1790,15 +1790,22 @@
 
  .form-control {
    height: 43px;
-   border-radius: 0;
    font-size: 14px;
    color: #212529bf;
    text-transform: uppercase;
+   border-radius: 0!important;
  }
 
  .form-control::placeholder {
    color: #212529bf !important;
    text-transform: uppercase;
+ }
+
+ .form-control:focus {
+   box-shadow: none; 
+   border-color: grey!important;
+
+   border-color: 0;
  }
 
  .secondary-font {
@@ -1817,9 +1824,9 @@
  }
 
  .food-menu-item:hover {
- transform: scale(1.02); 
+   transform: scale(1.02);
  }
- 
+
 
  .food-menu-item .photo {
    flex-basis: 80px;
@@ -1835,21 +1842,24 @@
    text-align: left;
    text-align-last: start;
  }
+
  .food-menu-item .menu-details h4 {
-  font-family: 'Sunlight Dreams' !important;
- }
- .food-menu-item .menu-details .ingredients {
-  color: #000000;
-    font-size: 18px;
-    margin-bottom: 5px;
- }
- .food-menu-item .menu-details .price {
-    font-family: 'Sunlight Dreams' !important;
-    font-size: 1.5rem;
-    font-weight: bold;
+   font-family: 'Sunlight Dreams' !important;
  }
 
- 
+ .food-menu-item .menu-details .ingredients {
+   color: #000000;
+   font-size: 18px;
+   margin-bottom: 5px;
+ }
+
+ .food-menu-item .menu-details .price {
+   font-family: 'Sunlight Dreams' !important;
+   font-size: 1.5rem;
+   font-weight: bold;
+ }
+
+
 
  .starter {
    background-image: url('../img/bg-photo.jpg');
@@ -1857,13 +1867,75 @@
    position: relative;
  }
 
- .starter::after{
-content: '';
- position: absolute;
-background-color: #2d2a2aa1;
-left: 0 ;
-right: 0;
-top: 0;
-bottom: 0;
-z-index: 0;
+ .starter::after {
+   content: '';
+   position: absolute;
+   background-color: #2d2a2aa1;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: 0;
  }
+
+ .btn-theme {
+   color: var(--contrast-color);
+   background: var(--accent-color);
+   border: 0;
+   padding: 10px 30px;
+   transition: 0.4s;
+   border-radius: 50px;
+ }
+
+ .btn-theme:hover { 
+   background:#f14040; 
+ }
+
+ .sit_status {
+    display: flex;
+    gap: 6px;
+}
+.index_box.grey {
+    background: #b9b9b9;
+}
+.index_box {
+    border: solid 1px #EFEFEF;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.index_box.green {
+    background: #41db41;
+}
+
+.fl {
+    float: left;
+    width: 20px;
+    border: solid 0px;
+}
+
+.fr {
+    float: left;
+    line-height: 20px;
+    font-size: 1em;
+    color: #777;
+}
+
+ 
+
+
+@media (min-width: 1024px) {
+    .form-bottom-box {
+        position: absolute;
+        width: 85%;
+        bottom: 12px;
+    }
+}
+
+input[type='checkbox']{
+  accent-color: red;
+    height: 18px;
+    width: 18px;
+}
