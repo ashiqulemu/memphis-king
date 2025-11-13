@@ -1812,7 +1812,7 @@
    font-family: 'Sunlight Dreams' !important;
  }
 
- .food-menu-item {
+ /* .food-menu-item {
    display: flex;
    padding: 15px;
    background: #ffffffd9;
@@ -1876,7 +1876,7 @@
    top: 0;
    bottom: 0;
    z-index: 0;
- }
+ } */
 
  .btn-theme {
    color: var(--contrast-color);
