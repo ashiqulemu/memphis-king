@@ -1939,3 +1939,11 @@ input[type='checkbox']{
     height: 18px;
     width: 18px;
 }
+
+.menu .tab-content .menu-item .ingredients{
+   display: -webkit-box;
+  -webkit-line-clamp: 3;    
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

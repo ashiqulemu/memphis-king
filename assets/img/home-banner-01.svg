@@ -2721,7 +2721,7 @@
 	</g>
 </g>
 <g>
-	<a>
+	<a href="index.html/#about">
 		<circle class="st6" cx="799.8" cy="1496.1" r="305.9"/>
 	</a>
 	<g>
@@ -2746,6 +2746,9 @@
 			/>
 	</g>
 </g>
+
+
+<a href="index.html#catering">
 <g>
 	<circle class="st6" cx="2456.1" cy="1819" r="307.9"/>
 	<g>
@@ -2775,6 +2778,8 @@
 		</g>
 	</g>
 </g>
+</a>
+<a href="index.html#menu">
 <g>
 	
 		<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 635.8694 3116.5696)" class="st6" cx="4080" cy="790.7" rx="310.2" ry="310.2"/>
@@ -2799,8 +2804,9 @@
 		</g>
 	</g>
 </g>
+</a>
 <g>
-	<a>
+	<a href="index.html#shop">
 		<circle class="st6" cx="5779.2" cy="1870.8" r="336.8"/>
 	</a>
 	<g>
@@ -2827,7 +2833,7 @@
 	</g>
 </g>
 <g>
-	<circle class="st6" cx="7390" cy="1503" r="336.8"/>
+	<a href="index.html#contact"><circle class="st6" cx="7390" cy="1503" r="336.8"/></a>
 	<g>
 		<g>
 			<path d="M7084.7,1517.3c0-34.2,18.6-57.2,46.1-57.2c3.9,0,9.1,0.3,13.3,0.3c2.3,0,4.4,0,5.5-0.4c2.2-0.7,4-1.5,5.4-1.5
